@@ -21,6 +21,9 @@ struct EmojiArtDocumentView: View {
             }
             .padding(.horizontal)
             Rectangle().foregroundColor(.yellow)
+                .onDrop(of: ["public.image"], isTargeted: nil) {
+                    
+                }
         }
     }
     private let defaultEmojiSize: CGFloat = 40
