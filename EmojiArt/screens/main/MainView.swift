@@ -10,7 +10,17 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
     var body: some View {
-        VStack {
+        ScrollView {
+            VStack {
+                
+            }
+        }
+    }
+}
+
+struct ItemCard: View {
+    var body: some View {
+        HStack {
             
         }
     }
