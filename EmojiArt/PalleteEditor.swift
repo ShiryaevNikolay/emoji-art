@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PalleteEditor: View {
     @Binding var chosenPallete: String
+    @Binding var isShowing: Bool
     @EnvironmentObject var document: EmojiArtDocument
     
     @State private var palleteName: String = ""
@@ -16,9 +17,20 @@ struct PalleteEditor: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("Pallete Editor")
-                .font(.headline)
-                .padding()
+            ZStack {
+                Text("Pallete Editor")
+                    .font(.headline)
+                    .padding()
+                HStack {
+                    Spacer()
+                    Button(
+                        action: {
+                            self.isShowing = false
+                        },
+                        label: {Text("Done")}
+                    ).padding()
+                }
+            }
             Divider()
             Form {
                 Section {

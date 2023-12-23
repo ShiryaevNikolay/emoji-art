@@ -25,8 +25,8 @@ struct PalleteChooser: View {
                     self.showPalleteEditor = true
                 }
                 .imageScale(.large)
-                .popover(isPresented: self.$showPalleteEditor) {
-                    PalleteEditor(chosenPallete: $chosenPallete)
+                .sheet(isPresented: self.$showPalleteEditor) {
+                    PalleteEditor(chosenPallete: self.$chosenPallete, isShowing: self.$showPalleteEditor)
                         .environmentObject(self.document)
                         .frame(minWidth: 300, minHeight: 500)
                 }
